@@ -6,10 +6,10 @@
 
     <xsl:output method="xml" indent="yes"/>
 
-    <xsl:template match="//ds:subsystem/ds:datasources/ds:datasource[@jndi-name='java:jboss/datasources/${env.POSTGRES_DATABASE}']">
-        <ds:datasource jndi-name="java:jboss/datasources/${env.POSTGRES_DATABASE}" enabled="true" use-java-context="true" pool-name="${env.POSTGRES_DATABASE}" use-ccm="true">
+    <xsl:template match="//ds:subsystem/ds:datasources/ds:datasource[@jndi-name='java:jboss/datasources/KeycloakDS']">
+        <ds:datasource jndi-name="java:jboss/datasources/KeycloakDS" enabled="true" use-java-context="true" pool-name="KeycloakDS" use-ccm="true">
             <ds:connection-url>jdbc:postgresql://localhost:5432/keycloak</ds:connection-url>
-            <ds:driver>postgresql</ds:driver>
+            <ds:driver>postgresql-9.3-1102-jdbc41.jar</ds:driver>
             <ds:security>
               <ds:user-name>keycloak</ds:user-name>
               <ds:password>keycloak</ds:password>
@@ -41,4 +41,3 @@
     </xsl:template>
 
 </xsl:stylesheet>
-
