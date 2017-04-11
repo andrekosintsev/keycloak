@@ -8,7 +8,7 @@
 
     <xsl:template match="//ds:subsystem/ds:datasources/ds:datasource[@jndi-name='java:jboss/datasources/KeycloakDS']">
         <ds:datasource jndi-name="java:jboss/datasources/KeycloakDS" enabled="true" use-java-context="true" pool-name="KeycloakDS" use-ccm="true">
-            <ds:connection-url>jdbc:postgresql://localhost::5432/keycloak</ds:connection-url>
+            <ds:connection-url>jdbc:postgresql://localhost:5432/keycloak</ds:connection-url>
             <ds:driver>postgresql</ds:driver>
             <ds:security>
               <ds:user-name>keycloak</ds:user-name>
